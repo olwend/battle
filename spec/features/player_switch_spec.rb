@@ -19,7 +19,7 @@ feature '#switch' do
     fight
     click_button 'Attack'
     click_link 'ok'
-    expect(page).to have_content "#{$game.opponent.name} has #{$game.opponent.points} hit points"
+    expect(page).to have_content "Badger has 80 hit points"
   end
 
 end
