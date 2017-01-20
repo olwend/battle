@@ -11,4 +11,8 @@ class Player
     @points -= 10
   end
 
+  def lose
+    points == 0? true : false
+  end
+
 end

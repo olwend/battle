@@ -15,3 +15,8 @@ def fight
   click_button 'Attack'
   click_link 'ok'
 end
+
+def lose
+  click_button 'Attack'
+  click_link 'ok'
+end

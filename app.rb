@@ -25,6 +25,9 @@ class Battle < Sinatra::Base
 
   post '/attack' do
     $game.attack($game.opponent)
+      if $game.opponent.lose
+        redirect to('/lose')
+      end
     $game.switch
     redirect to('/confirmation')
   end
@@ -32,6 +35,11 @@ class Battle < Sinatra::Base
     get '/confirmation' do
       erb (:confirmation)
     end
+
+    get '/lose' do
+      erb (:lose)
+    end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
