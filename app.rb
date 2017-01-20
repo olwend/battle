@@ -29,7 +29,7 @@ class Battle < Sinatra::Base
   post '/attack' do
     @game = Game.instance
     @game.attack(@game.opponent)
-    if $game.opponent.lose
+    if @game.opponent.lose
       redirect to('/lose')
     end
     @game.switch
