@@ -1,0 +1,11 @@
+
+<%= @player_1_name %> vs.<%= @player_2_name %> <br>
+<%= @player_2_name %> has <%= @player_2_points %> hit points <br>
+<% if @comment %>
+  <%= @comment %>
+    <form action="/switch" method="post">
+    <input type="submit" value="Attack back!">
+<% end %>
+  <form action="/attack" method="post">
+  <input type="submit" value="Attack">
+</form>
